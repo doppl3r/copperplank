@@ -59,29 +59,15 @@
 		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/skrollr.min.js"></script>
+		<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 		 <!--<script src='js/jquery.scrollto.js'></script>-->
 		 <script type="text/javascript">
-			//skrollr.init({
-			//	forceHeight: false
-			//});
-			//add button functionality
-			$(document).ready(function(){
-				$(function() {
-					$('a[href*=#]:not([href=#])').click(function() {
-						if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-							var target = $(this.hash);
-							target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-							if (target.length) {
-								$('html,body').animate({
-									scrollTop: target.offset().top
-								}, 1000);
-								return false;
-							}
-						}
-						return false;
-					});
-				});
-				
+			var s = skrollr.init(/*other stuff*/);
+			skrollr.menu.init(s, {
+				//skrollr will smoothly animate to the new position using `animateTo`.
+				animate: true,
+				easing: 'swing', scale: 2,
+				duration: function(currentTop, targetTop) {return 500;}
 			});
 		</script>
 </body>
