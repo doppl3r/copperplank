@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Copper Plank</title>
+	<meta name="description" content="Copper Plank">
+	<meta name="author" content="jacob debenedetto">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/black.css">
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+</head>
+<body id="skrollr-body">
+		<div class="wrapper">
+			<!--Top of website-->
+			<div id="section1"
+				data-bottom-top="background-position: 0px 0px;"
+				data-top-bottom="background-position: 0px -200px;">
+				<h1 data-0="opacity: 1;" data-200="opacity: 0;">Black</h1>
+				<a id="button1" href="#section2"
+					data-100="opacity: 1;"
+					data-400="opacity: 0;">
+				</a>
+			</div>
+			
+			<!--Middle of website-->
+			<div id="section2">
+				<div id="section2-left"
+					data-bottom-top="background-position: 0px -80px;"
+					data-top-bottom="background-position: 0px 0px;">	
+				</div>
+				<div id="section2-right">
+					<div id="section2-right-top"
+						data-center-center="background-position: 0px 0px;"
+						data-top-bottom="background-position: -40px 0px;">
+						<div id="section2-right-top-brush"
+							data-center-center="background-position: 30px 0px;"
+							data-top-bottom="background-position: 400px 0px;">
+						</div>
+					</div>
+					<div id="section2-right-bottom"
+						data-bottom-top="background-position: -40px 0px;"
+						data-top-bottom="background-position: 0px 0px;">
+					</div>
+				</div>
+			</div>
+			<!--Bottom of website-->
+			<div id="section3">
+				<h2>create a custom floor color</h2>
+				<h3>choose the closest color</h3>
+				<div class="color-option">
+					
+				</div>
+			</div>
+		</div>
+		
+		<!--Scripts-->
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/skrollr.min.js"></script>
+		 <!--<script src='js/jquery.scrollto.js'></script>-->
+		 <script type="text/javascript">
+			skrollr.init({
+				forceHeight: false
+			});
+			//add button functionality
+			$(document).ready(function(){
+				$(function() {
+					$('a[href*=#]:not([href=#])').click(function() {
+						if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+							var target = $(this.hash);
+							target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+							if (target.length) {
+								$('html,body').animate({
+									scrollTop: target.offset().top
+								}, 1000);
+								return false;
+							}
+						}
+						return false;
+					});
+				});
+				
+			});
+		</script>
+</body>
+</html>
