@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-	<link rel="stylesheet" href="css/red.css">
+	<link rel="stylesheet" href="css/home.css">
 	<link rel="stylesheet" href="css/tiny-nav.css">
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
 </head>
@@ -37,37 +37,28 @@
 			<div id="section1"
 				data-bottom-top="background-position: 0px 0px;"
 				data-top-bottom="background-position: 0px -64px;">
-				<h1>red</h1>
-				<a id="button1" href="#section2" >
+				<h1>crafted for you</h1>
+				<h3>you create the color & we create your floor</h3>
+				<a id="button1" href="#section3" >
 				</a>
 			</div>
 			
-			<!--Middle of website-->
-			<div id="section2">
-				<div id="section2-left"
-					data-bottom-top="background-position: -80px -80px;  background-size: 570px 895px;"
-					data-top-bottom="background-position: 0px 0px; background-size: 410px 735px;">	
-				</div>
-				<div id="section2-right">
-					<div id="section2-right-top">
-						<div id="section2-right-top-brush"
-							data-center-top="background-position: 30px 0px;"
-							data-top-center="background-position: 400px 0px;">
-						</div>
-					</div>
-					<div id="section2-right-bottom"
-						data-bottom-top="background-size: 652px 360px; background-position: 0px 0px; "
-						data-top-bottom="background-size: 840px 464px; background-position: -94px -52px; ">
-					</div>
-				</div>
-			</div>
 			<!--Bottom of website-->
 			<div id="section3">
-				<h2>create a custom floor color</h2>
-				<h3>choose the closest color</h3>
-				<div class="color-option">
-					
+				<img src="img/infinity-logo1.png"/>
+				
+				<div id="container">
+					<div id="dummy"></div>
+					<div id="element">
+						<a href="black.html" class="color-option black-div"><h5>black</h5></a>
+						<a href="white.html" class="color-option white-div"><h5>white</h5></a>
+						<a href="gray.html" class="color-option grey-div"><h5>gray</h5></a>
+						<a href="red.html" class="color-option red-div"><h5>red</h5></a>
+						<a href="natural.html" class="color-option natural-div"><h5>natural</h5></a>
+						<a href="brown.html" class="color-option brown-div"><h5>brown</h5></a>
+					</div>
 				</div>
+				<h4>Our Infinity Color System allows you to create the perfect color.  Get started.</h4>
 			</div>
 		</div>
 	</div>
@@ -79,7 +70,7 @@
 	<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 	<script type="text/javascript" src="js/tiny-nav.js"></script>
 	<script type="text/javascript">
-		var s = skrollr.init(/*{forceHeight:false}*/);
+		var s = skrollr.init(/*other stuff*/);
 		skrollr.menu.init(s, {
 			//skrollr will smoothly animate to the new position using `animateTo`.
 			animate: true,
