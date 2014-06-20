@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Copper Plank</title>
+	<meta name="description" content="Copper Plank">
+	<meta name="author" content="jacob debenedetto">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="css/wood.css">
+	<link rel="stylesheet" href="css/tiny-nav.css">
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
+</head>
+<body>
+	<!--nav-->
+	<div class="wrapper">
+		<!--Requires tiny-nav.css & tiny-nav.js to work-->
+		<div class="tiny-nav">
+			<input type="button" id="tiny-nav-button" style="display: none" value="OFF">
+			<ul onclick="toggle(this);"><img src="img/menu-icon.png"/>
+				<a href="black.html" class="black-div">black</a>
+				<a href="white.html" class="white-div">white</a>
+				<a href="gray.html" class="grey-div">gray</a>
+				<a href="red.html" class="red-div">red</a>
+				<a href="natural.html" class="natural-div">natural</a>
+				<a href="brown.html" class="brown-div">brown</a>
+				<a href="wood.html" class="wood-div">the wood</a>
+			</ul>
+		</div>
+	</div>
+	
+	<div id="skrollr-body">
+		<div class="wrapper">
+			
+			<!--1st section of website-->
+			<div id="section1"
+				data-bottom-top="background-position: 0px 0px;"
+				data-top-bottom="background-position: 0px -64px;">
+				<h1>European oak</h1>
+				<p>A grand species that derived its name from the Latin word for "strength". This exceptionally hard and resilient wood has a course texture, an open pore structure and creamy white complexion. It grows slowly in colder climates which make for a tight, straight grain and is characterized by a center cathedral grain.</p>
+				<br><a id="button1" href="#section5" ></a>
+			</div>
+			
+			<!--2nd Section of website-->
+			<div id="section2">
+				<div class="subnav">
+					<h2>go to the source</h2>
+					<h3 onclick="goToSlide(0,1);" class="active">our way </h3>
+					<h3 onclick="goToSlide(1,1);">| their Way</h3>
+					<h3 onclick="goToSlide(2,1);">| obama's Way</h3>
+					<h3 onclick="goToSlide(3,1);">| dans's Way</h3>
+					<h3 onclick="goToSlide(4,1);">| dude's Way</h3>
+				</div>
+				<div id="carousel1" class="carousel slide">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="left">
+								<p>Many European Oak floor products are actually manufactued in Asia and are made with inferior quality raw material because it is cheaper. Cost cutting to increase profits leads to raw material that include extensive splits which require significant amounts of wood fill and yield a less stable product. This means a lower quality product and no cost savings because of the many layers of middle men.</p>
+							</div>
+							<div class="right">
+								<img src="img/wood-diagram1.png"/>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item active">
+								<div class="left">
+									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
+									</div>
+								<div class="right">
+									<img src="img/wood-diagram2.png"/>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item active">
+								<div class="left">
+									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
+									</div>
+								<div class="right">
+									<img src="img/wood-diagram2.png"/>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item active">
+								<div class="left">
+									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
+									</div>
+								<div class="right">
+									<img src="img/wood-diagram2.png"/>
+								</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item active">
+								<div class="left">
+									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
+									</div>
+								<div class="right">
+									<img src="img/wood-diagram2.png"/>
+								</div>
+							</div>
+						</div>
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel1" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel1" data-slide-to="1"></li>
+							<li data-target="#carousel1" data-slide-to="2"></li>
+							<li data-target="#carousel1" data-slide-to="3"></li>
+							<li data-target="#carousel1" data-slide-to="4"></li>
+						</ol>
+					</div>
+					
+					<!-- Controls -->
+					<!--<a class="left carousel-control" href="#carousel1" data-slide="prev">
+					<span class="icon-prev"></span></a>
+					<a class="right carousel-control" href="#carousel1" data-slide="next">
+					<span class="icon-next"></span></a>-->
+				</div>
+			</div>
+			
+			<!--3rd Section of website-->
+			<div id="section3">
+				
+			</div>
+			
+			<!--4th Section of website-->
+			<div id="section4">
+				
+			</div>
+			
+			<!--5th Section of website-->
+			<div id="section5">
+				<img src="img/infinity-logo1.png"/>
+				
+				<div id="container">
+					<div id="dummy"></div>
+					<div id="element">
+						<a href="black.html" class="color-option black-div"><h5>black</h5></a>
+						<a href="white.html" class="color-option white-div"><h5>white</h5></a>
+						<a href="gray.html" class="color-option grey-div"><h5>gray</h5></a>
+						<a href="red.html" class="color-option red-div"><h5>red</h5></a>
+						<a href="natural.html" class="color-option natural-div"><h5>natural</h5></a>
+						<a href="brown.html" class="color-option brown-div"><h5>brown</h5></a>
+					</div>
+				</div>
+				<h4>Our Infinity Color System allows you to create the perfect color.  Get started.</h4>
+			</div>
+		</div>
+	</div>
+	
+	<!--Scripts-->
+	<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/skrollr.min.js"></script>
+	<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
+	<script type="text/javascript" src="js/tiny-nav.js"></script>
+	<script type="text/javascript">
+		//set up slide-show (carousel)
+		$(document).ready(function() { $('.carousel').carousel({interval:0})});
+		
+		//change subnav properties
+		for (var i = 0; i < $(".carousel").length; i++){
+			$('#carousel'+(i+1)).on('slid.bs.carousel', function() {
+				var index = $('#carousel'+i+' .active').index();
+				$( "#section"+(i+1)+" .subnav h3" ).css("color","#b0a697");
+				$( "#section"+(i+1)+" .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
+			});
+		}
+		
+		function goToSlide(number,id) {
+			$("#carousel"+id).carousel(number);
+		}
+		
+		//set up parallax class
+		var s = skrollr.init(/*other stuff*/);
+		skrollr.menu.init(s, {
+			//skrollr will smoothly animate to the new position using `animateTo`.
+			animate: true,
+			easing: 'outCubic', scale: 2,
+			duration: function(currentTop, targetTop) {return 5000;}
+		});
+		
+	</script>
+</body>
+</html>

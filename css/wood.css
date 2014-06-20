@@ -1,0 +1,229 @@
+/*
+ *  (c) YanoCreative 2014
+ *  
+  */
+
+html { background-color: #F5F5F5; }
+body {
+  background-color: #716350;
+  font-family: 'lincoln';
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0px auto;
+}
+
+#skrollr-body {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+/*Section 1 styles*/
+#section1 {
+  background-image: url("../img/wood-bg1.jpg");
+  padding: 0px 64px 0px 0px;
+  text-align: right;
+  height: 600px;
+}
+#section1 p {
+  font-family: 'gearedslab';
+  color: #FFFFFF;
+  display: inline-block;
+  max-width: 420px;
+  font-size: 20px;
+  text-align: right;
+  text-shadow: 0px 0px 7px #000000;
+}
+#section2 {
+  background-color: #d5cec4;
+  min-height: 640px;
+}
+#section2 p {
+  font-family: 'gearedslab';
+  margin: 56px 0px 16px 0px;
+  font-weight: normal;
+  font-size: 20px;
+  color: #69563c;
+}
+
+#section3 { text-align: center; }
+#section3 h1 {
+  font-size: 82px;
+  color: #4e381a;
+  text-shadow: none;
+}
+#section3 h3 { }
+#section3 .subhead { width: auto; height: auto; text-align: center; }
+
+#button1 {
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.5;
+  background-image: url("../img/down-arrow-shadow.png");
+  background-size: contain;
+  width: 64px;
+  height: 64px;
+}
+
+/*Section 3 styles*/
+#section5 {
+  display: block;
+  background-image: url("../img/home-bg2.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 640px;
+  text-align: center;
+}
+#section5 img { display: block; margin: 0px auto; padding-top: 24px; }
+
+#container {
+  position: relative;
+  display: inline-block;
+  margin: 24px 0px;
+  width: 50%;
+}
+#dummy {
+  margin-top: 66.6667%; /* 3:2 aspect ratio, 75% = 4:3 ratio */
+}
+#element {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.color-option, .color-option:hover {
+  cursor: pointer;
+  margin-right: -3px;
+  text-decoration: none;
+  display: inline-block;
+  color: #FFFFFF;
+  width: 33.3332%;
+  height: 50%;
+  font-size: 28px;
+  text-shadow: 0px 0px 7px #000000;
+  text-transform: uppercase;
+}
+
+/* color divs */
+.black-div { background-color: rgba(0,0,0,.75); }
+.black-div:hover { background-color: rgba(0,0,0,1); }
+.white-div { background-color: rgba(255,255,255,.75); }
+.white-div:hover { background-color: rgba(255,255,255,1); }
+.grey-div { background-color: rgba(127,127,127,.75); }
+.grey-div:hover { background-color: rgba(127,127,127,1); }
+.red-div { background-color: rgba(114,28,8,.75); }
+.red-div:hover { background-color: rgba(114,28,8,1); }
+.natural-div { background-color: rgba(191,157,101,.75); }
+.natural-div:hover { background-color: rgba(191,157,101,1); }
+.brown-div { background-color: rgba(84,32,0,.75); }
+.brown-div:hover { background-color: rgba(84,32,0,1); }
+.wood-div { background-image: url('../img/sqr-wood-dark.png'); }
+.wood-div:hover { background-image: url('../img/sqr-wood.png'); }
+
+h1 {
+  margin: 0px;
+  padding: 96px 0px 8px 0px;
+  font-size: 120px;
+  text-shadow: 0px 0px 30px #000000;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+h1 img { display: block; margin: 0px auto;}
+h2 {
+  margin: 0px;
+  padding: 0px 0px 0px 0px;
+  color: #4e381a;
+  font-size: 60px;
+  text-transform:uppercase;
+}
+h3 {
+  display: inline-block;
+  margin: 0px;
+  padding: 4px 0px 16px 0px;
+  color: #b0a697;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+h3:hover { cursor: pointer;  }
+h3.active { color: #70614d; }
+h5 {
+  margin: 37.5% 0 0 0;
+  padding: 4px 0px 16px 0px;
+  color: #FFF;
+  font-size: 28px;
+  text-shadow: 0px 0px 7px #000000;
+  text-transform: uppercase;
+}
+
+
+.breaker { border-bottom: 1px solid #d9d9d9; }
+
+/*Bootstrap patches*/
+.subnav {
+  padding: 80px 24px 0px 10%;
+}
+.carousel-inner {  }
+.carousel-inner .item { }
+.carousel-inner .item .active { color: #70614d; }
+.carousel-inner .item .left, .carousel-inner .item .right {
+  vertical-align: top;
+  display: table-cell;
+  width: 50%;
+}
+.carousel-inner .item .left  { padding: 0px 24px 40px 10%; }
+.carousel-inner .item .right { padding: 0px 10% 40px 8px;}
+.carousel-inner .item img { width: 100%; }
+
+.carousel { text-align: left; }
+.carousel-control.right, .carousel-control.left { background-image: none; }
+.carousel-indicators { left: auto; margin-left: 4px; text-align: left; }
+.carousel-indicators .active { width: 16px; height: 16px;  }
+.carousel-indicators { padding-left: 9%; z-index: 0; }
+.carousel-indicators li {
+  text-align: left;
+  background-color: #a69b8b;
+  width: 16px; height: 16px;
+  border: none;
+  margin: 0px;
+}
+
+@media(max-width:480px){}
+@media(max-width:640px){
+  #container { width: 75%; }
+  #section1 { padding: 0px 16px; }
+  #section1 p { font-size: 18px; }
+  #section2 .subnav, #section2 .subnav2 { padding: 80px 24px 0px;}
+  p { text-align: justify; }
+  .carousel-inner .item .left { padding: 0px 24px 12px; display: block; width: 100%;}
+  .carousel-inner .item .right { padding: 0px 24px 80px; display: block; width: 100%; }
+  h1 { font-size: 80px; padding-top: 80px; }
+}
+@media(max-width:1024px){
+  
+}
+
+/* Generated by Font Squirrel (http://www.fontsquirrel.com) on April 25, 2014 */
+@font-face {
+  font-family: 'lincoln';
+  src: url('../fonts/abrahamlincoln-webfont.eot');
+  src: url('../fonts/abrahamlincoln-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/abrahamlincoln-webfont.woff') format('woff'),
+       url('../fonts/abrahamlincoln-webfont.ttf') format('truetype'),
+       url('../fonts/abrahamlincoln-webfont.svg#ubunturegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'gearedslab';
+  src: url('../fonts/gearedslab-webfont.eot');
+  src: url('../fonts/gearedslab-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gearedslab-webfont.woff') format('woff'),
+       url('../fonts/gearedslab-webfont.ttf') format('truetype'),
+       url('../fonts/gearedslab-webfont.svg#ubunturegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
