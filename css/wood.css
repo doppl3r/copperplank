@@ -48,13 +48,31 @@ body {
   color: #69563c;
 }
 
-#section3 { text-align: center; }
+#section3 {
+  text-align: center;
+  background-size: cover;
+  background-image: url("../img/wood-bg2.jpg");
+}
 #section3 h1 {
   font-size: 82px;
   color: #4e381a;
   text-shadow: none;
 }
-#section3 h3 { }
+#section3 p {
+  font-family: 'gearedslab';
+  margin: 0px 0px 16px 0px;
+  font-weight: normal;
+  font-size: 20px;
+  color: #69563c;
+}
+#section3 h4 {
+  margin: 56px 0px 0px;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-family: "gearedslab";
+  color: #69563c;
+  text-shadow: none;
+}
 #section3 .subhead { width: auto; height: auto; text-align: center; }
 
 #button1 {
@@ -164,7 +182,7 @@ h5 {
 
 /*Bootstrap patches*/
 .subnav {
-  padding: 80px 24px 0px 10%;
+  padding: 80px 10% 0px 10%;
 }
 .carousel-inner {  }
 .carousel-inner .item { }
@@ -180,9 +198,8 @@ h5 {
 
 .carousel { text-align: left; }
 .carousel-control.right, .carousel-control.left { background-image: none; }
-.carousel-indicators { left: auto; margin-left: 4px; text-align: left; }
+#section2 .carousel-indicators { padding-left: 9%; z-index: 0; left: auto; margin-left: 4px; text-align: left; }
 .carousel-indicators .active { width: 16px; height: 16px;  }
-.carousel-indicators { padding-left: 9%; z-index: 0; }
 .carousel-indicators li {
   text-align: left;
   background-color: #a69b8b;
@@ -197,7 +214,7 @@ h5 {
   #section1 { padding: 0px 16px; }
   #section1 p { font-size: 18px; }
   #section2 .subnav, #section2 .subnav2 { padding: 80px 24px 0px;}
-  p { text-align: justify; }
+  #section2 p { text-align: justify; margin-top: 0px; }
   .carousel-inner .item .left { padding: 0px 24px 12px; display: block; width: 100%;}
   .carousel-inner .item .right { padding: 0px 24px 80px; display: block; width: 100%; }
   h1 { font-size: 80px; padding-top: 80px; }

@@ -48,9 +48,6 @@
 					<h2>go to the source</h2>
 					<h3 onclick="goToSlide(0,1);" class="active">our way </h3>
 					<h3 onclick="goToSlide(1,1);">| their Way</h3>
-					<h3 onclick="goToSlide(2,1);">| obama's Way</h3>
-					<h3 onclick="goToSlide(3,1);">| dans's Way</h3>
-					<h3 onclick="goToSlide(4,1);">| dude's Way</h3>
 				</div>
 				<div id="carousel1" class="carousel slide">
 					<!-- Wrapper for slides -->
@@ -73,43 +70,10 @@
 								</div>
 							</div>
 						</div>
-						<div class="item">
-							<div class="item active">
-								<div class="left">
-									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
-									</div>
-								<div class="right">
-									<img src="img/wood-diagram2.png"/>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item active">
-								<div class="left">
-									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
-									</div>
-								<div class="right">
-									<img src="img/wood-diagram2.png"/>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="item active">
-								<div class="left">
-									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
-									</div>
-								<div class="right">
-									<img src="img/wood-diagram2.png"/>
-								</div>
-							</div>
-						</div>
 						<!-- Indicators -->
 						<ol class="carousel-indicators">
 							<li data-target="#carousel1" data-slide-to="0" class="active"></li>
 							<li data-target="#carousel1" data-slide-to="1"></li>
-							<li data-target="#carousel1" data-slide-to="2"></li>
-							<li data-target="#carousel1" data-slide-to="3"></li>
-							<li data-target="#carousel1" data-slide-to="4"></li>
 						</ol>
 					</div>
 					
@@ -123,7 +87,50 @@
 			
 			<!--3rd Section of website-->
 			<div id="section3">
-				
+				<div class="subnav">
+					<h2>go to the source</h2>
+					<h3 onclick="goToSlide(0,2);" class="active">the problem</h3>
+					<h3 onclick="goToSlide(1,2);">| the solution</h3>
+					<h3 onclick="goToSlide(2,2);">| the specs</h3>
+				</div>
+				<div id="carousel2" class="carousel slide">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<div class="left">
+								<img src="img/wood-problem.png"/>
+							</div>
+							<div class="right">
+								<h4>the problem: </h4>
+								<p>Wood, by nature seeks to return to its original tree shape.  That cellular memory is most prevelant when moisture or humidity is present and cupping, crowning or warping threatens the plans ability to remain straight, flat and true</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="left">
+								<img src="img/wood-solution.png"/>
+							</div>
+							<div class="right">
+								<h4>the solution: </h4>
+								<p>Moisture impacts the expansion ofa piece of woods width up to 10 times more than the woods length.  To minimize this tension we use solid hardwood core filits that are layered perpendicular to the top wear layer and the backer so the width and the length of the balanced plank adjust at the same rate and force.</p>
+							</div>
+						</div>
+						<div class="item">
+							<div class="left">
+								<img src="img/wood-specs.png"/>
+							</div>
+							<div class="right">
+								<h4>the specs: </h4>
+								<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
+							</div>
+						</div>
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel2" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel2" data-slide-to="1"></li>
+							<li data-target="#carousel2" data-slide-to="2"></li>
+						</ol>
+					</div>
+				</div>
 			</div>
 			
 			<!--4th Section of website-->
@@ -159,17 +166,23 @@
 	<script type="text/javascript" src="js/tiny-nav.js"></script>
 	<script type="text/javascript">
 		//set up slide-show (carousel)
-		$(document).ready(function() { $('.carousel').carousel({interval:0})});
+		$(document).ready(function(){
+			$('.carousel').carousel({interval: false});			
+		});
 		
-		//change subnav properties
-		for (var i = 0; i < $(".carousel").length; i++){
-			$('#carousel'+(i+1)).on('slid.bs.carousel', function() {
-				var index = $('#carousel'+i+' .active').index();
-				$( "#section"+(i+1)+" .subnav h3" ).css("color","#b0a697");
-				$( "#section"+(i+1)+" .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
-			});
-		}
+		//alter h3 color after clicked
+		$('#carousel1').on('slid.bs.carousel', function() {
+			var index = $('#carousel1 .active').index();
+			$( "#section2 .subnav h3" ).css("color","#b0a697");
+			$( "#section2 .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
+		});
+		$('#carousel2').on('slid.bs.carousel', function() {
+			var index = $('#carousel2 .active').index();
+			$( "#section3 .subnav h3" ).css("color","#b0a697");
+			$( "#section3 .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
+		});
 		
+		//change to a slide when called
 		function goToSlide(number,id) {
 			$("#carousel"+id).carousel(number);
 		}
