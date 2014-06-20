@@ -85,6 +85,39 @@ body {
   height: 64px;
 }
 
+#section4 {
+  background-image: url('../img/wood-bg3.jpg');
+  font-family: 'gearedslab-light';
+}
+#section4 .carousel-inner {
+  min-height: 240px;
+}
+#section4 h1 {
+  text-shadow: 0px 0px 7px #000000;
+  font-family: 'gearedslab-light';
+  font-weight: 100;
+  font-size: 80px;
+  padding: 0px;
+}
+#section4 .subnav { text-align: center; padding: 40px 10% 0px 10%; }
+#section4 p {
+  padding: 0px 20%;
+  text-align: left;
+  font-family: 'gearedslab-light';
+  text-shadow: 0px 0px 7px #000000;
+  margin: 0px 0px 16px 0px;
+  font-weight: normal;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+#section4 .item {
+  text-align: center;
+}
+#section4 h3 {
+  color:#FFF;
+  text-shadow: 0px 0px 7px #000000;
+}
+
 /*Section 3 styles*/
 #section5 {
   display: block;
@@ -95,6 +128,14 @@ body {
   text-align: center;
 }
 #section5 img { display: block; margin: 0px auto; padding-top: 24px; }
+#section5 h4 {
+  margin: 0px;
+  padding: 4px 0px 16px 0px;
+  color: #FFF;
+  font-size: 20px;
+  text-shadow: 0px 0px 7px #000000;
+  text-transform: uppercase;
+}
 
 #container {
   position: relative;
@@ -241,6 +282,16 @@ h5 {
        url('../fonts/gearedslab-webfont.woff') format('woff'),
        url('../fonts/gearedslab-webfont.ttf') format('truetype'),
        url('../fonts/gearedslab-webfont.svg#ubunturegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'gearedslab-light';
+  src: url('../fonts/gearedslab-light-webfont.eot');
+  src: url('../fonts/gearedslab-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/gearedslab-light-webfont.woff') format('woff'),
+       url('../fonts/gearedslab-light-webfont.ttf') format('truetype'),
+       url('../fonts/gearedslab-light-webfont.svg#ubunturegular') format('svg');
   font-weight: normal;
   font-style: normal;
 }

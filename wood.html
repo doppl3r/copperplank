@@ -61,13 +61,11 @@
 							</div>
 						</div>
 						<div class="item">
-							<div class="item active">
-								<div class="left">
-									<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
-									</div>
-								<div class="right">
-									<img src="img/wood-diagram2.png"/>
+							<div class="left">
+								<p>Our European Oak is percured through our direct suppliers who own the managed forests and the logging operation.  This control at the local leval insures that every tree is hand selected to grade and only the highest quality of lumber is selected for our floors.</p>
 								</div>
+							<div class="right">
+								<img src="img/wood-diagram2.png"/>
 							</div>
 						</div>
 						<!-- Indicators -->
@@ -135,7 +133,25 @@
 			
 			<!--4th Section of website-->
 			<div id="section4">
-				
+				<div class="subnav">
+					<h1>The Science of finishing</h1>
+				</div>
+				<div id="carousel3" class="carousel slide">
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<p>Our two coat system of natural oils penetrates the wood grain and hardens deep inside the cells to provide a protective shield that helps preserve the wood surface and enhances its natural beauty and character.  Our environmentally friendly oil is deep cured with UV lamps to promote inter-coat adhesion as well as maximum resistance to UV fade, liquid, dirt, foot traffic and other residue.  This easy to maintain finish will provide years of aesthetic beauty and excellent durability.</p>
+						</div>
+						<div class="item">
+							<h3>Penitrating oils and UV curing provide extreme resilliance</h3>
+						</div>
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel3" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel3" data-slide-to="1"></li>
+						</ol>
+					</div>
+				</div>
 			</div>
 			
 			<!--5th Section of website-->
@@ -180,6 +196,13 @@
 			var index = $('#carousel2 .active').index();
 			$( "#section3 .subnav h3" ).css("color","#b0a697");
 			$( "#section3 .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
+		});
+		$('#carousel3').on('slid.bs.carousel', function() {
+			var index = $('#carousel3 .active').index();
+			switch (index){
+				case(0):$( "#section4").css('background-image','url(img/wood-bg3.jpg)');break;
+				case(1):$( "#section4").css('background-image','url(img/wood-bg4.jpg)');break;
+			}
 		});
 		
 		//change to a slide when called
