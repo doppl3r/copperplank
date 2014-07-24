@@ -38,7 +38,7 @@
 				data-bottom-top="background-position: 0px 0px;"
 				data-top-bottom="background-position: 0px -64px;">
 				<h1>Natural</h1>
-				<a id="button1" href="#section2" >
+				<a id="button1" href="#section3" >
 				</a>
 			</div>
 			
@@ -63,11 +63,12 @@
 			</div>
 			<!--Bottom of website-->
 			<div id="section3">
-				<h2>create a custom floor color</h2>
-				<h3>choose the closest color</h3>
-				<div class="color-option">
-					
-				</div>
+				<div id="timber" style="height: 720px; overflow: hidden;"></div>
+				<form enctype="multipart/form-data" action="php/mail.php" method="POST" >
+					<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+					<input type="file" class="form-control" name="uploaded_file" style="display: none;"/>
+					<button id="special-button" type="submit" value="Send File" class="btn btn-default" style="display: none;">Submit</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -78,14 +79,16 @@
 	<script type="text/javascript" src="js/skrollr.min.js"></script>
 	<script type="text/javascript" src="js/skrollr.menu.min.js"></script>
 	<script type="text/javascript" src="js/tiny-nav.js"></script>
+	<script type="text/javascript" src="js/timber-custom.js"></script>
 	<script type="text/javascript">
 		var s = skrollr.init(/*{forceHeight:false}*/);
 		skrollr.menu.init(s, {
 			//skrollr will smoothly animate to the new position using `animateTo`.
 			animate: true,
 			easing: 'outCubic', scale: 2,
-			duration: function(currentTop, targetTop) {return 500;}
+			duration: function(currentTop, targetTop) {return 5000;}
 		});
+		timber.setBackground("natural.jpg");
 	</script>
 </body>
 </html>
