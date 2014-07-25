@@ -14,7 +14,7 @@ $mail->IsHTML(true);
 //Set who the message is to be sent from
 $mail->setFrom($_REQUEST['email'], $_REQUEST['email']);
 //Set who the message is to be sent to
-$mail->addAddress('deben3@gmail.com', 'Copper Plank');
+//$mail->addAddress('deben3@gmail.com', 'Copper Plank');
 $mail->addAddress($_REQUEST['email'], $_REQUEST['index']);
 //Set the subject line
 $mail->Subject = 'Copper Plank Wood Color';

@@ -96,6 +96,7 @@ function timber(){
 		Button.prototype.release = function(){
 			if (this.animateY != 0) this.action=true;
 			else this.action=false;
+			document.body.style.cursor = 'default';
 		}
 		Button.prototype.move = function() {
 			if (selectX > ((canvas.width/2)-(this.img.width/2)) &&
@@ -105,7 +106,7 @@ function timber(){
 					document.body.style.cursor = 'pointer';
 			}
 			else {
-				if (this.animateY != 0) { document.body.style.cursor = 'default'; }
+				document.body.style.cursor = 'default';
 				this.animateY = 0;
 			}
 		}
