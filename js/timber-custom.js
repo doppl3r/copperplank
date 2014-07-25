@@ -48,6 +48,7 @@ function timber(){
 	//mobile events
 	canvas.addEventListener("touchstart", function (e) {e.preventDefault();checkXY(e,true);down();return false;},false);
 	canvas.addEventListener("touchmove", function (e) {e.preventDefault();checkXY(e,true);move();return false;},false);
+	canvas.addEventListener("touchend", function (e) {e.preventDefault();checkXY(e,false);up();return false;},false);
 	
 	function checkXY(event,mobile){
 		//set x and y click
@@ -91,7 +92,7 @@ function timber(){
 		this.y=y;
 		this.img = new Image();
 		this.img.src=src;
-		Button.prototype.select = function(){}
+		Button.prototype.select = function(){ this.move(); }
 		Button.prototype.release = function(){
 			if (this.animateY != 0) this.action=true;
 			else this.action=false;
@@ -214,15 +215,24 @@ function timber(){
 	this.checkWidth = function(){adjustWidth();}
 	this.setBackground = function(src){background.src=dir+src;}
 	this.renderCanvas = function(){ return canvas.toDataURL("image/png"); }
+	this.setSlider1Value = function(value){ slider1.value=value; }
+	this.setSlider2Value = function(value){ slider2.value=value; }
 	this.parseID = function(){
-		var s = "#02";
-		return s+convertID(slider1.value)+convertID(slider2.value);
+		var path = location.pathname;
+		path = path.substring(path.lastIndexOf("/") + 1);
+		//path = path.substring(0,path.lastIndexOf("."))+"?=";
+		return path+"?="+convertID(slider1.value)+convertID(slider2.value);
 	}
 	function convertID(myNumber){
+		var s;
 		myNumber *= 100;
+		myNumber = Math.floor(myNumber);
 		if (myNumber < 0) myNumber = 0;
-		if (myNumber > 99) myNumber = 99;
-		return ("0" + myNumber).slice(-2);
+		else if (myNumber > 99) myNumber = 99;
+		else if (myNumber < 10) s = "0"+myNumber;
+		else if (myNumber >= 10) s = myNumber + "";
+		else s="50"; //fix to default
+		return s;
 	}
 	function adjustWidth(){
 		canvas.width = document.getElementById(id).offsetWidth;
@@ -237,4 +247,15 @@ function timber(){
 timber = new timber();
 timber.checkWidth();
 document.getElementById(timber.getId()).appendChild(timber.getCanvas());
-document.getElementById('submitbutton').onclick = function() { document.getElementById('name-value').value = timber.parseID(); }
+document.getElementById('submitbutton').onclick = function() { document.getElementById('index-value').value = timber.parseID(); }
+
+//if available, set the slider to the preset amount
+window.onload = function(e){
+	var index = location.href;
+	if (index.indexOf("?=") > 0) {
+		//alert(location.href.indexOf("?="));
+		index = index.substring(location.href.indexOf("?=")+2);
+		timber.setSlider1Value(parseInt(index.substring(0,2))/100);
+		timber.setSlider2Value(parseInt(index.substring(2,4))/100);
+	} 
+}
