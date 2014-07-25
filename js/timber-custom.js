@@ -92,7 +92,10 @@ function timber(){
 		this.img = new Image();
 		this.img.src=src;
 		Button.prototype.select = function(){}
-		Button.prototype.release = function(){ this.action=true; }
+		Button.prototype.release = function(){
+			if (this.animateY != 0) this.action=true;
+			else this.action=false;
+		}
 		Button.prototype.move = function() {
 			if (selectX > ((canvas.width/2)-(this.img.width/2)) &&
 				selectX < ((canvas.width/2)+(this.img.width/2)) &&
@@ -158,7 +161,10 @@ function timber(){
 	
 	var update = function (modifier) {
 		if (button1.action) {
-			document.getElementById('special-button').click();
+			document.getElementById('special-popup').click();
+			//document.getElementById('name-value').value = 'pizzamonster';
+			button1.action=false;
+			button1.animateY = 0;
 		}
 	}
 	// Draw everything
@@ -208,6 +214,16 @@ function timber(){
 	this.checkWidth = function(){adjustWidth();}
 	this.setBackground = function(src){background.src=dir+src;}
 	this.renderCanvas = function(){ return canvas.toDataURL("image/png"); }
+	this.parseID = function(){
+		var s = "#02";
+		return s+convertID(slider1.value)+convertID(slider2.value);
+	}
+	function convertID(myNumber){
+		myNumber *= 100;
+		if (myNumber < 0) myNumber = 0;
+		if (myNumber > 99) myNumber = 99;
+		return ("0" + myNumber).slice(-2);
+	}
 	function adjustWidth(){
 		canvas.width = document.getElementById(id).offsetWidth;
 		slider1.update();
@@ -221,3 +237,4 @@ function timber(){
 timber = new timber();
 timber.checkWidth();
 document.getElementById(timber.getId()).appendChild(timber.getCanvas());
+document.getElementById('submitbutton').onclick = function() { document.getElementById('name-value').value = timber.parseID(); }
