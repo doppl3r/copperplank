@@ -12,7 +12,7 @@ require 'class.phpmailer.php';
 $mail = new PHPMailer();
 $mail->IsHTML(true);
 //Set who the message is to be sent from
-$mail->setFrom($_REQUEST['email'], $_REQUEST['email']);
+$mail->setFrom('matt@copperplank.com','CopperPlank');
 //Set who the message is to be sent to
 //$mail->addAddress('deben3@gmail.com', 'Copper Plank');
 $mail->addAddress($_REQUEST['email'], $_REQUEST['index']);

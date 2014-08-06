@@ -86,11 +86,13 @@ body {
 }
 
 #section4 {
-  background-image: url('../img/wood-bg3.jpg');
-  font-family: 'gearedslab-light';
+  /*background-image: url('../img/wood-bg3.jpg');*/
+  /*font-family: 'gearedslab-light';*/
+  background-size: contain;
+  
 }
 #section4 .carousel-inner {
-  min-height: 340px;
+  /*min-height: 340px;*/
 }
 #section4 h1 {
   text-shadow: 0px 0px 7px #000000;

@@ -25,7 +25,8 @@ function timber(){
 	var icon4 = new Image();
 	var logo  = new Image();
 	//var like  = new Image();
-	var button1 = new Button(dir+"like.png", 600);
+	var button1 = new Button(dir+"like.png", 620);
+	var button2 = new Button(dir+"reset.png", 560);
 	//background
 	var background = new Image();
 	sliderButton.src = dir+"slider-button.png";
@@ -84,14 +85,16 @@ function timber(){
 		slider1.select();
 		slider2.select();
 		button1.select();
+		button2.select();
 	}
-	function move(){ slider1.move(); slider2.move(); button1.move(); }
-	function up(){ slider1.release(); slider2.release(); button1.release(); }
+	function move(){ slider1.move(); slider2.move(); button1.move(); button2.move(); }
+	function up(){ slider1.release(); slider2.release(); button1.release(); button2.release(); }
 	
 	function Button(src, y) {
 		this.y=y;
 		this.img = new Image();
 		this.img.src=src;
+		this.animateY = 0;
 		Button.prototype.select = function(){ this.move(); }
 		Button.prototype.release = function(){
 			if (this.animateY != 0) this.action=true;
@@ -168,6 +171,12 @@ function timber(){
 			button1.action=false;
 			button1.animateY = 0;
 		}
+		if (button2.action) {
+			slider1.value = 0.5;
+			slider2.value = 0.5;
+			button2.action=false;
+			button2.animateY = 0;
+		}
 	}
 	// Draw everything
 	function render() {
@@ -197,6 +206,7 @@ function timber(){
 		slider1.draw();
 		slider2.draw();
 		button1.draw();
+		button2.draw();
 	};
 	// The system loop
 	function main() {

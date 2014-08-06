@@ -25,7 +25,7 @@
 				<a href="red.html" class="red-div">red</a>
 				<a href="natural.html" class="natural-div">natural</a>
 				<a href="brown.html" class="brown-div">brown</a>
-				<a href="wood.html" class="wood-div">the wood</a>
+				<a href="wood.html" class="wood-div">our way</a>
 			</ul>
 		</div>
 	</div>
@@ -134,20 +134,15 @@
 			</div>
 			
 			<!--4th Section of website-->
-			<div id="section4"
-					data-bottom-top="background-position: 0px 0px;"
-					data-top-bottom="background-position: 0px -64px;">
-				<div class="subnav">
-					<h1>The Science of finishing</h1>
-				</div>
+			<div id="section4">
 				<div id="carousel3" class="carousel slide">
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner">
 						<div class="item active">
-							<p>Our two coat system of natural oils penetrates the wood grain and hardens deep inside the cells to provide a protective shield that helps preserve the wood surface and enhances its natural beauty and character.  Our environmentally friendly oil is deep cured with UV lamps to promote inter-coat adhesion as well as maximum resistance to UV fade, liquid, dirt, foot traffic and other residue.  This easy to maintain finish will provide years of aesthetic beauty and excellent durability.</p>
+							<img src="img/wood-slide.jpg"/>
 						</div>
 						<div class="item">
-							<h3>Penitrating oils and UV curing provide extreme resilliance</h3>
+							<img src="img/science.jpg"/>
 						</div>
 						<!-- Indicators -->
 						<ol class="carousel-indicators">
@@ -201,13 +196,13 @@
 			$( "#section3 .subnav h3" ).css("color","#b0a697");
 			$( "#section3 .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
 		});
-		$('#carousel3').on('slid.bs.carousel', function() {
-			var index = $('#carousel3 .active').index();
-			switch (index){
-				case(0):$( "#section4").css('background-image','url(img/wood-bg3.jpg)');break;
-				case(1):$( "#section4").css('background-image','url(img/wood-bg4.jpg)');break;
-			}
-		});
+		//$('#carousel3').on('slid.bs.carousel', function() {
+		//	var index = $('#carousel3 .active').index();
+		//	switch (index){
+		//		case(0):$( "#section4").css('background-image','url(img/wood-bg3.jpg)');break;
+		//		case(1):$( "#section4").css('background-image','url(img/science.jpg)');break;
+		//	}
+		//});
 		
 		//change to a slide when called
 		function goToSlide(number,id) {
@@ -222,7 +217,7 @@
 			easing: 'outCubic', scale: 2,
 			duration: function(currentTop, targetTop) {return 5000;}
 		});
-		
+		s.refresh($("#skrollr-body"));
 	</script>
 </body>
 </html>
