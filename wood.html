@@ -19,6 +19,7 @@
 		<div class="tiny-nav">
 			<input type="button" id="tiny-nav-button" style="display: none" value="OFF">
 			<ul onclick="toggle(this);"><img src="img/menu-icon.png"/>
+				<a href="index.html" class="glyphicon glyphicon-home home-icon"></a>
 				<a href="black.html" class="black-div">black</a>
 				<a href="white.html" class="white-div">white</a>
 				<a href="gray.html" class="grey-div">gray</a>
@@ -88,7 +89,7 @@
 					data-bottom-top="background-position: 0px 0px;"
 					data-top-bottom="background-position: -64px 0px;">
 				<div class="subnav">
-					<h2>go to the source</h2>
+					<h2>INTELLIGENT BY DESIGN</h2>
 					<h3 onclick="goToSlide(0,2);" class="active">the problem</h3>
 					<h3 onclick="goToSlide(1,2);">| the solution</h3>
 					<h3 onclick="goToSlide(2,2);">| the specs</h3>
@@ -135,27 +136,17 @@
 			
 			<!--4th Section of website-->
 			<div id="section4">
-				<div id="carousel3" class="carousel slide">
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
-						<div class="item active">
-							<img src="img/wood-slide.jpg"/>
-						</div>
-						<div class="item">
-							<img src="img/science.jpg"/>
-						</div>
-						<!-- Indicators -->
-						<ol class="carousel-indicators">
-							<li data-target="#carousel3" data-slide-to="0" class="active"></li>
-							<li data-target="#carousel3" data-slide-to="1"></li>
-						</ol>
-					</div>
+				<h2>the science of finishing</h2>
+				<div class="item"><img src="img/science.jpg"/></div>
+				<div class="item">
+					<p>Our environmentally friendly, natural oil finish penetrates the wood grain and hardens deep inside the cells to provide a protective shield that helps preserve the wood surface and enhances its beauty. We deep cure with UV lamps to promote inter-coat adhension as well as maximum resistance to UV fade, liquids, dirt, foot traffic and other residue</p>
 				</div>
 			</div>
 			
 			<!--5th Section of website-->
 			<div id="section5">
-				<img src="img/infinity-logo1.png"/>
+				<!--<img src="img/infinity-logo2.png"/>-->
+				<h2>the art of finishing</h2>
 				
 				<div id="container">
 					<div id="dummy"></div>
@@ -188,13 +179,13 @@
 		//alter h3 color after clicked
 		$('#carousel1').on('slid.bs.carousel', function() {
 			var index = $('#carousel1 .active').index();
-			$( "#section2 .subnav h3" ).css("color","#b0a697");
-			$( "#section2 .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
+			$( "#section2 .subnav h3" ).css("color","#7D6A50");
+			$( "#section2 .subnav h3:nth-child("+(((index+2)))+")").css("color","#4e381a");
 		});
 		$('#carousel2').on('slid.bs.carousel', function() {
 			var index = $('#carousel2 .active').index();
-			$( "#section3 .subnav h3" ).css("color","#b0a697");
-			$( "#section3 .subnav h3:nth-child("+(((index+2)))+")").css("color","#69563c");
+			$( "#section3 .subnav h3" ).css("color","#7D6A50");
+			$( "#section3 .subnav h3:nth-child("+(((index+2)))+")").css("color","#4e381a");
 		});
 		//$('#carousel3').on('slid.bs.carousel', function() {
 		//	var index = $('#carousel3 .active').index();

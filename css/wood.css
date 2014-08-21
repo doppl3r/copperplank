@@ -65,12 +65,14 @@ body {
   font-size: 20px;
   color: #69563c;
 }
+#section3 h3.active { color: #4e381a}
+#section3 h3 { color: #7D6A50; }
 #section3 h4 {
   margin: 56px 0px 0px;
   text-transform: uppercase;
   font-size: 24px;
   font-family: "gearedslab";
-  color: #69563c;
+  color: #554228;
   text-shadow: none;
 }
 #section3 .subhead { width: auto; height: auto; text-align: center; }
@@ -88,8 +90,9 @@ body {
 #section4 {
   /*background-image: url('../img/wood-bg3.jpg');*/
   /*font-family: 'gearedslab-light';*/
+  background-color: #FFE0B1;
   background-size: contain;
-  
+  padding: 0px 64px;
 }
 #section4 .carousel-inner {
   /*min-height: 340px;*/
@@ -103,18 +106,24 @@ body {
 }
 #section4 .subnav { text-align: center; padding: 80px 10% 0px 10%; }
 #section4 p {
-  padding: 0px 20%;
+  font-weight: normal;
+  color: #69563c;
+  padding: 92px 80px 64px 0px;
   text-align: left;
-  font-family: 'gearedslab-light';
-  text-shadow: 0px 0px 7px #000000;
+  font-family: 'gearedslab';
   margin: 0px 0px 16px 0px;
   font-weight: normal;
   font-size: 20px;
-  color: #FFFFFF;
 }
 #section4 .item {
+  vertical-align: top;
+  display: inline-block;
   text-align: center;
+  margin-right: -4px;
+  width: 50%;
 }
+#section4 img { max-width: 100%; padding-bottom: 48px; }
+#section4 h2 { padding: 64px 0px 0px; }
 #section4 h3 {
   color:#FFF;
   text-shadow: 0px 0px 7px #000000;
@@ -129,6 +138,7 @@ body {
   height: 640px;
   text-align: center;
 }
+#section5 h2 { padding: 64px 0px 32px; color:#FFF; text-shadow: 0px 0px 7px #000000; }
 #section5 img { display: block; margin: 0px auto; padding-top: 24px; }
 #section5 h4 {
   margin: 0px;
@@ -143,7 +153,7 @@ body {
   position: relative;
   display: inline-block;
   margin: 24px 0px;
-  width: 50%;
+  width: 55%;
 }
 #dummy {
   margin-top: 66.6667%; /* 3:2 aspect ratio, 75% = 4:3 ratio */
@@ -167,6 +177,7 @@ body {
   font-size: 28px;
   text-shadow: 0px 0px 7px #000000;
   text-transform: uppercase;
+  border: 1px solid rgba(0,0,0,0.15);
 }
 
 /* color divs */
@@ -260,6 +271,10 @@ h5 {
   #section1 p { font-size: 18px; }
   #section2 .subnav, #section2 .subnav2 { padding: 80px 24px 0px;}
   #section2 p { text-align: justify; margin-top: 0px; }
+  #section3 p { text-align: justify; margin-top: 0px; }
+  #section4 .item {  width: 100%; }
+  #section4 p { text-align: justify; padding-top: 0px; padding-right: 0px; }
+  #section4 img { padding-bottom: 0px; }
   .carousel-inner .item .left { padding: 0px 24px 12px; display: block; width: 100%;}
   .carousel-inner .item .right { padding: 0px 24px 80px; display: block; width: 100%; }
   h1 { font-size: 80px; padding-top: 80px; }

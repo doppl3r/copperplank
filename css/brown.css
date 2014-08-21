@@ -79,8 +79,41 @@ body {
   overflow: auto;
   text-align: center;
 }
-
-
+#section3 img { display: block; margin: 0 auto;}
+#container {
+  position: relative;
+  display: inline-block;
+  margin: 24px 0px;
+  width: 75%;
+}
+#dummy {
+  margin-top: 66.6667%; /* 3:2 aspect ratio, 75% = 4:3 ratio */
+}
+#element {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.color-option, .color-option:hover {
+  cursor: pointer;
+  margin-right: -4px;
+  text-decoration: none;
+  display: inline-block;
+  color: #FFFFFF;
+  width: 33.3332%;
+  height: 50%;
+  font-size: 28px;
+  text-shadow: 0px 0px 7px #000000;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.brown-green { background-image: url(../img/timber-assets/brown-green.jpg); }
+.brown-default { background-image: url(../img/timber-assets/brown.jpg); }
+.brown-yellow { background-image: url(../img/timber-assets/brown-yellow.jpg); }
+.brown-green:hover, .brown-default:hover, .brown-yellow:hover { opacity:0.5; }
+h5 { font-size: 24px; margin-top: 40%; }
 
 /* color divs */
 .black-div { background-color: rgba(0,0,0,.75); }

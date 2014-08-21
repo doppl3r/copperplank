@@ -26,17 +26,19 @@ body {
   text-align: center;
   height: 600px;
 }
-#button1 {
+#button1, #button2 {
   display: inline-block;
   cursor: pointer;
   background-image: url("../img/down-arrow-shadow.png");
   width: 96px;
   height: 96px;
 }
+#button2 { background-image: url("../img/down-arrow-shadow2.png");}
 
 /*Section 2 styles*/
 #section2 {
   height: 640px;
+  text-align: center;
 }
 #section2-left {
   float: left;
@@ -133,26 +135,12 @@ p {
 
 @media(max-width:480px){}
 @media(max-width:640px){
-  #section2{
-    height: 320px;
-  }
-  #section2-left {
-    height: 320px;
-  }
-  #section2-right-top {
-    height: 140px;
-    background-size: auto 140px;
-  }
-  #section2-right-top-brush {
-    height: 140px;
-    background-size: auto 140px;
-  }
-  #section2-right-bottom {
-    height: 180px;
-  }
-  h1 {
-    font-size: 96px;
-  }
+  #section2{ height: 320px;}
+  #section2-left { height: 320px; }
+  #section2-right-top { height: 140px; background-size: auto 140px; }
+  #section2-right-top-brush { height: 140px; background-size: auto 140px; }
+  #section2-right-bottom { height: 180px; }
+  h1 { font-size: 96px; }
 }
 @media(max-width:1024px){
   

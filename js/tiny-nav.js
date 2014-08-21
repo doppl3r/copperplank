@@ -27,6 +27,6 @@ function toggle(button)
 function setToggle(binary){
     $('.tiny-nav ul a').stop();
     if (binary == "ON") {$('.tiny-nav ul a').animate({height: "0",padding: "0px 32px",visibility: "hidden",opacity: "0"},500);}
-    else {$('.tiny-nav ul a').animate({height: "58",padding: "12px 32px",visibility: "visible",opacity: "1"},500);}
+    else {$('.tiny-nav ul a').animate({height: "50",padding: "8px 32px",visibility: "visible",opacity: "1"},500);}
     document.getElementById("tiny-nav-button").value=binary;
 }

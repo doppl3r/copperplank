@@ -20,6 +20,7 @@
 		<div class="tiny-nav">
 			<input type="button" id="tiny-nav-button" style="display: none" value="OFF">
 			<ul onclick="toggle(this);"><img src="img/menu-icon.png"/>
+				<a href="index.html" class="glyphicon glyphicon-home home-icon"></a>
 				<a href="black.html" class="black-div">black</a>
 				<a href="white.html" class="white-div">white</a>
 				<a href="gray.html" class="grey-div">gray</a>
@@ -39,7 +40,7 @@
 				data-bottom-top="background-position: 0px 0px;"
 				data-top-bottom="background-position: 0px -64px;">
 				<h1>red</h1>
-				<a id="button1" href="#section3" >
+				<a id="button1" href="#section3" style="opacity: 0.8">
 				</a>
 			</div>
 			
@@ -93,8 +94,9 @@
 			//skrollr will smoothly animate to the new position using `animateTo`.
 			animate: true,
 			easing: 'outCubic', scale: 2,
-			duration: function(currentTop, targetTop) {return 5000;}
+			duration: function(currentTop, targetTop) {return 6500;}
 		});
+		timber.setLogoOpacity(0.15);
 		timber.setBackground("red.jpg");
 	</script>
 </body>

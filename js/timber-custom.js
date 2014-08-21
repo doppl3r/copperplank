@@ -10,7 +10,8 @@ function timber(){
 	var selectX = 0;
 	var selectY = 0;
 	var slider1 = new Slider(420, 0.25);
-	var slider2 = new Slider(500,0.25);
+	var slider2 = new Slider(500, 0.25);
+	var slider3 = new Slider(580, 0.25);
 	// texture(s)
 	var dir = "img/timber-assets/";
 	var sliderButton = new Image();
@@ -23,10 +24,18 @@ function timber(){
 	var icon2 = new Image();
 	var icon3 = new Image();
 	var icon4 = new Image();
+	var icon5 = new Image();
 	var logo  = new Image();
+	var logoT = new Image();
+	var logoOpacity = 1.0;
 	//var like  = new Image();
-	var button1 = new Button(dir+"like.png", 620);
-	var button2 = new Button(dir+"reset.png", 560);
+	var button1 = new Button(dir+"like.png", -1, 620);
+	var button2 = new Button(dir+"reset.png",-1, 370);
+	//wood choices
+	var samples = new Array();
+	//samples.push(new Sample(dir+"reset.png",100,100));
+	//samples.push("hey");
+	//alert(samples[0]);
 	//background
 	var background = new Image();
 	sliderButton.src = dir+"slider-button.png";
@@ -38,7 +47,9 @@ function timber(){
 	icon2.src = dir+"lighter.png";
 	icon3.src = dir+"warmer.png";
 	icon4.src = dir+"cooler.png";
-	logo.src =  dir+"logo.png";
+	icon5.src = dir+"brush.png";
+	logo.src  = dir+"logo-white.png";
+	logoT.src = dir+"logo-text.png";
 	//like.src =  dir+"like.png";
 	background.src = dir+"background.jpg";
 
@@ -81,16 +92,47 @@ function timber(){
 		}
 	}
 	
-	function down(){
-		slider1.select();
-		slider2.select();
-		button1.select();
-		button2.select();
-	}
-	function move(){ slider1.move(); slider2.move(); button1.move(); button2.move(); }
-	function up(){ slider1.release(); slider2.release(); button1.release(); button2.release(); }
+	function down(){ slider1.select();	slider2.select(); if (slider3.extra) slider3.select(); button1.select(); button2.select(); }
+	function move(){ slider1.move(); slider2.move(); if (slider3.extra) slider3.move(); button1.move(); button2.move(); }
+	function up(){ slider1.release(); slider2.release(); if (slider3.extra) slider3.release(); button1.release(); button2.release(); }
 	
-	function Button(src, y) {
+	//function Sample(src, x, y) {
+	//	this.x=x; //designate as percentage
+	//	this.y=y;
+	//	this.img = new Image();
+	//	this.img.src=src;
+	//	this.animateY = 0;
+	//	Sample.prototype.select = function(){ this.move(); }
+	//	Sample.prototype.release = function(){
+	//		if (this.animateY != 0) this.action=true;
+	//		else this.action=false;
+	//		document.body.style.cursor = 'default';
+	//	}
+	//	Sample.prototype.move = function() {
+	//		if (selectX > ((canvas.width/2)-(this.img.width/2)) &&
+	//			selectX < ((canvas.width/2)+(this.img.width/2)) &&
+	//			selectY > this.y && selectY < this.y+this.img.height/2){
+	//				this.animateY = this.img.height/2;
+	//				document.body.style.cursor = 'pointer';
+	//		}
+	//		else {
+	//			document.body.style.cursor = 'default';
+	//			this.animateY = 0;
+	//		}
+	//	}
+	//	Sample.prototype.draw = function(){
+	//		//center if the value is -1
+	//		var x_pos = (this.x < 0) ? (canvas.width/2)-(this.img.width/2) : this.x;
+	//		ctx.drawImage(this.img,
+	//			0,this.animateY, //crop start
+	//			this.img.width,this.img.height, //crop end
+	//			x_pos,this.y, //position start
+	//			this.img.width,this.img.height); //position end
+	//	}
+	//}
+	
+	function Button(src, x, y) {
+		this.x=x; //designate as percentage
 		this.y=y;
 		this.img = new Image();
 		this.img.src=src;
@@ -99,26 +141,31 @@ function timber(){
 		Button.prototype.release = function(){
 			if (this.animateY != 0) this.action=true;
 			else this.action=false;
-			document.body.style.cursor = 'default';
+			//document.body.style.cursor = 'default';
 		}
 		Button.prototype.move = function() {
 			if (selectX > ((canvas.width/2)-(this.img.width/2)) &&
 				selectX < ((canvas.width/2)+(this.img.width/2)) &&
 				selectY > this.y && selectY < this.y+this.img.height/2){
 					this.animateY = this.img.height/2;
-					document.body.style.cursor = 'pointer';
+					//document.body.style.cursor = 'pointer';
 			}
 			else {
-				document.body.style.cursor = 'default';
+				//document.body.style.cursor = 'default';
 				this.animateY = 0;
 			}
 		}
 		Button.prototype.draw = function(){
-			//ctx.drawImage(this.img,(canvas.width/2)-(this.img.width/2),this.y);
-			ctx.drawImage(this.img, 0,this.animateY,this.img.width,this.img.height/2,
-									 (canvas.width/2)-(this.img.width/2),this.y,this.img.width,this.img.height/2);
+			//center if the value is -1
+			var x_pos = (this.x < 0) ? (canvas.width/2)-(this.img.width/2) : this.x;
+			ctx.drawImage(this.img,
+				0,this.animateY, //crop start
+				this.img.width,this.img.height/2, //crop end
+				x_pos,this.y, //position start
+				this.img.width,this.img.height/2); //position end
 		}
 	}
+	
 	function Slider(y, m){
 		//declare & init variables
 		this.y=y;
@@ -127,7 +174,11 @@ function timber(){
 		this.width=16;
 		this.height=32;
 		this.padding=12; //easier to grab
+		this.hex1="000000";
+		this.hex2="FFFFFF";
+		this.divider=1;
 		this.selected=false;
+		this.extra=false;
 		//define nested functions
 		Slider.prototype.setMargin = function(m){ this.m=m; }
 		Slider.prototype.setY = function(y){ this.y=y; }
@@ -174,17 +225,31 @@ function timber(){
 		if (button2.action) {
 			slider1.value = 0.5;
 			slider2.value = 0.5;
+			slider3.value = 0.5;
 			button2.action=false;
 			button2.animateY = 0;
+			//reset options menu
+			document.getElementById("color-options").style.display = "block";
+			document.getElementById("timber").style.display = "none";
 		}
 	}
 	// Draw everything
 	function render() {
 		ctx.clearRect (0,0, canvas.width, canvas.height);
 		//canvas.width = canvas.width;
-		ctx.globalCompositeOperation = "overlay";
+		//ctx.globalCompositeOperation = "overlay";
 		ctx.drawImage(background,0,0,canvas.width, canvas.height);
 		//warm or cold
+		if (slider3.extra) {
+			ctx.fillStyle = slider3.value < .5 ? "#"+slider3.hex1 : "#"+slider3.hex2;
+			//ctx.fillStyle = slider3.value < .5 ?
+			//	"rgba(255,255,255,"+(Math.abs((slider3.value)-.5))+")" :
+			//	"rgba(150,150,150,"+(Math.abs((slider3.value)-.5))+")";
+			ctx.globalAlpha = Math.abs((slider3.value)-.5)/slider3.divider;
+			ctx.fillRect(0,0,canvas.width,canvas.height);
+			ctx.globalAlpha = 1;
+		}
+		ctx.globalCompositeOperation = "overlay";
 		ctx.fillStyle = slider2.value < .5 ?
 			"rgba(50,0,0,"+(Math.abs((slider2.value)-.5))+")" :
 			"rgba(0,0,50,"+(Math.abs((slider2.value)-.5))+")";
@@ -196,7 +261,10 @@ function timber(){
 		ctx.fillRect(0,0,canvas.width,canvas.height);
 		ctx.globalCompositeOperation = "source-over";
 		//draw icons first
-		ctx.drawImage(logo, (canvas.width/2)-(logo.width/2), 0);
+		ctx.globalAlpha = logoOpacity;
+		ctx.drawImage(logo,  (canvas.width/2)-(logo.width/2), 0);
+		ctx.globalAlpha = 1;
+		ctx.drawImage(logoT, (canvas.width/2)-(logo.width/2), 220);
 		ctx.drawImage(icon1, slider1.a-48+mainX, slider1.y-6+mainY);
 		ctx.drawImage(icon2, slider1.b+16+mainX, slider1.y-6+mainY);
 		ctx.drawImage(icon3, slider2.a-48+mainX, slider2.y-6+mainY);
@@ -205,6 +273,16 @@ function timber(){
 		//draw sliders for icons
 		slider1.draw();
 		slider2.draw();
+		if (slider3.extra){
+			slider3.draw();
+			//slider3 values
+			ctx.fillStyle = "#"+slider3.hex1;
+			ctx.fillRect(slider3.a-42+mainX, slider3.y-6+mainY, 19, 16);
+			ctx.drawImage(icon5, slider3.a-48+mainX, slider3.y-6+mainY);
+			ctx.fillStyle = "#"+slider3.hex2;
+			ctx.fillRect(slider3.b+22+mainX, slider3.y-6+mainY, 19, 16);
+			ctx.drawImage(icon5, slider3.b+16+mainX, slider3.y-6+mainY);
+		}
 		button1.draw();
 		button2.draw();
 	};
@@ -226,20 +304,26 @@ function timber(){
 	this.checkWidth = function(){adjustWidth();}
 	this.setBackground = function(src){background.src=dir+src;}
 	this.renderCanvas = function(){ return canvas.toDataURL("image/png"); }
-	this.setSlider1Value = function(value){ slider1.value=value; }
-	this.setSlider2Value = function(value){ slider2.value=value; }
+	this.setSlider1Value = function(value){ if (value==0.99) value=1; slider1.value=value; }
+	this.setSlider2Value = function(value){ if (value==0.99) value=1; slider2.value=value; }
+	this.setSlider3Value = function(value){ if (value==0.99) value=1; slider3.value=value; }
+	this.enableSlider3 = function(enabled){ slider3.extra=enabled; }
+	this.changeLogo = function(newLogo){ logo.src =  dir+""+newLogo;}
+	this.setSlider3Divider = function(value){ slider3.divider=value; }
+	this.setSlider3HexValues = function(hex1, hex2){ slider3.hex1=hex1; slider3.hex2=hex2; }
+	this.setLogoOpacity = function(value){ logoOpacity=value; }
 	this.parseID = function(){
 		var path = location.pathname;
 		path = path.substring(path.lastIndexOf("/") + 1);
 		//path = path.substring(0,path.lastIndexOf("."))+"?=";
-		return path+"?="+convertID(slider1.value)+convertID(slider2.value);
+		return path+"?="+convertID(slider1.value)+convertID(slider2.value)+convertID(slider3.value);
 	}
 	function convertID(myNumber){
-		var s;
+		var s = "00";
 		myNumber *= 100;
 		myNumber = Math.floor(myNumber);
-		if (myNumber < 0) myNumber = 0;
-		else if (myNumber > 99) myNumber = 99;
+		if (myNumber < 0) s = "00";
+		else if (myNumber > 99) s = "99";
 		else if (myNumber < 10) s = "0"+myNumber;
 		else if (myNumber >= 10) s = myNumber + "";
 		else s="50"; //fix to default
@@ -249,6 +333,7 @@ function timber(){
 		canvas.width = document.getElementById(id).offsetWidth;
 		slider1.update();
 		slider2.update();
+		slider3.update();
 	}
 	this.getCanvas = function(){ return canvas; }
 	this.getId =  function(){ return id; }
@@ -268,5 +353,6 @@ window.onload = function(e){
 		index = index.substring(location.href.indexOf("?=")+2);
 		timber.setSlider1Value(parseInt(index.substring(0,2))/100);
 		timber.setSlider2Value(parseInt(index.substring(2,4))/100);
+		timber.setSlider3Value(parseInt(index.substring(4,6))/100);
 	} 
 }
