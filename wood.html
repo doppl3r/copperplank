@@ -137,9 +137,9 @@
 			<!--4th Section of website-->
 			<div id="section4">
 				<h2>the science of finishing</h2>
-				<div class="item"><img src="img/science.jpg"/></div>
+				<div class="item"><img src="img/science2.jpg"/></div>
 				<div class="item">
-					<p>Our environmentally friendly, natural oil finish penetrates the wood grain and hardens deep inside the cells to provide a protective shield that helps preserve the wood surface and enhances its beauty. We deep cure with UV lamps to promote inter-coat adhension as well as maximum resistance to UV fade, liquids, dirt, foot traffic and other residue</p>
+					<p>Our environmentally friendly, natural oil finish penetrates the wood grain and hardens deep inside the cells to provide a protective shield that helps preserve the wood surface and enhances its beauty. We deep cure with UV lamps to promote inter-coat adhension as well as maximum resistance to UV fade, liquids, dirt, foot traffic and other residue. This easy to maintain finish will provide years of aesthetic beauty and excellent durability.</p>
 				</div>
 			</div>
 			
@@ -172,43 +172,37 @@
 	<script type="text/javascript" src="js/tiny-nav.js"></script>
 	<script type="text/javascript">
 		//set up slide-show (carousel)
+		//set up parallax class
+		var s = skrollr.init(/*other stuff*/);
 		$(document).ready(function(){
-			$('.carousel').carousel({interval: false});			
+			skrollr.menu.init(s, {
+				//skrollr will smoothly animate to the new position using `animateTo`.
+				animate: true,
+				easing: 'outCubic', scale: 2,
+				duration: function(currentTop, targetTop) {return 5000;}
+			});
+			$('.carousel').carousel({interval: false});
+			//alter h3 color after clicked
+			$('#carousel1').on('slid.bs.carousel', function() {
+				var index = $('#carousel1 .active').index();
+				$( "#section2 .subnav h3" ).css("color","#7D6A50");
+				$( "#section2 .subnav h3:nth-child("+(((index+2)))+")").css("color","#4e381a");
+			});
+			$('#carousel2').on('slid.bs.carousel', function() {
+				var index = $('#carousel2 .active').index();
+				$( "#section3 .subnav h3" ).css("color","#7D6A50");
+				$( "#section3 .subnav h3:nth-child("+(((index+2)))+")").css("color","#4e381a");
+			});
+			s.refresh($("#skrollr-body"));
 		});
-		
-		//alter h3 color after clicked
-		$('#carousel1').on('slid.bs.carousel', function() {
-			var index = $('#carousel1 .active').index();
-			$( "#section2 .subnav h3" ).css("color","#7D6A50");
-			$( "#section2 .subnav h3:nth-child("+(((index+2)))+")").css("color","#4e381a");
-		});
-		$('#carousel2').on('slid.bs.carousel', function() {
-			var index = $('#carousel2 .active').index();
-			$( "#section3 .subnav h3" ).css("color","#7D6A50");
-			$( "#section3 .subnav h3:nth-child("+(((index+2)))+")").css("color","#4e381a");
-		});
-		//$('#carousel3').on('slid.bs.carousel', function() {
-		//	var index = $('#carousel3 .active').index();
-		//	switch (index){
-		//		case(0):$( "#section4").css('background-image','url(img/wood-bg3.jpg)');break;
-		//		case(1):$( "#section4").css('background-image','url(img/science.jpg)');break;
-		//	}
-		//});
-		
 		//change to a slide when called
 		function goToSlide(number,id) {
 			$("#carousel"+id).carousel(number);
 		}
-		
-		//set up parallax class
-		var s = skrollr.init(/*other stuff*/);
-		skrollr.menu.init(s, {
-			//skrollr will smoothly animate to the new position using `animateTo`.
-			animate: true,
-			easing: 'outCubic', scale: 2,
-			duration: function(currentTop, targetTop) {return 5000;}
-		});
 		s.refresh($("#skrollr-body"));
+		//if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		//	s.destroy();
+		//}
 	</script>
 </body>
 </html>
