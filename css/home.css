@@ -32,6 +32,7 @@ body {
   background-image: url("../img/down-arrow-shadow.png");
   width: 96px;
   height: 96px;
+  margin-top: 124px;
 }
 
 /*Section 3 styles*/
@@ -93,6 +94,7 @@ body {
 .wood-div { background-image: url('../img/sqr-wood-dark.png'); }
 .wood-div:hover { background-image: url('../img/sqr-wood.png'); }
 
+
 h1 {
   margin: 0px;
   padding: 96px 0px 8px 0px;
@@ -150,9 +152,9 @@ p {
     height: 180px;
   }
   #container { width: 75%; }
-  h1 {
-    font-size: 96px;
-  }
+  h1 { font-size: 96px; }
+  #button1 { margin-top: 16px; }
+  .nav-logo { width: 136px; }
 }
 @media(max-width:1024px){
   

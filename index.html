@@ -8,8 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
-	<link rel="stylesheet" href="css/home.css">
 	<link rel="stylesheet" href="css/tiny-nav.css">
+	<link rel="stylesheet" href="css/home.css">
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
 </head>
 <body>
@@ -18,7 +18,7 @@
 		<!--Requires tiny-nav.css & tiny-nav.js to work-->
 		<div class="tiny-nav">
 			<input type="button" id="tiny-nav-button" style="display: none" value="OFF">
-			<ul onclick="toggle(this);"><img src="img/menu-icon.png"/>
+			<ul onclick="toggle(this);"><img class="tiny-nav-hamburger" src="img/menu-icon.png"/>
 				<a href="index.html" class="glyphicon glyphicon-home home-icon"></a>
 				<a href="black.html" class="black-div">black</a>
 				<a href="white.html" class="white-div">white</a>
@@ -27,6 +27,7 @@
 				<a href="natural.html" class="natural-div">natural</a>
 				<a href="brown.html" class="brown-div">brown</a>
 				<a href="wood.html" class="wood-div">our way</a>
+				<a><img class="nav-logo" src="img/infinity-logo-black.png"/></a>
 			</ul>
 		</div>
 	</div>
@@ -41,7 +42,7 @@
 				
 				<h1><img src="img/home-header.png"/>crafted for you</h1>
 				<h3>you create the color & we create your floor</h3>
-				<a id="button1" href="#section3" style="opacity: 0.75; margin-top: 48px;">
+				<a id="button1" href="#section3" style="opacity: 0.75;">
 				</a>
 			</div>
 			
@@ -76,7 +77,7 @@
 		skrollr.menu.init(s, {
 			//skrollr will smoothly animate to the new position using `animateTo`.
 			animate: true,
-			easing: 'outCubic', scale: 2,
+			easing: 'swing', scale: 2,
 			duration: function(currentTop, targetTop) {return 1000;}
 		});
 	</script>

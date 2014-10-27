@@ -13,10 +13,11 @@
   text-align: center;
 }
 .zoom-anim-dialog input,.zoom-anim-dialog span { margin-bottom: 8px; display: block; }
-.mfp-container { padding: 0px 64px; }
+.mfp-container { padding: 0px 12px; }
 .mfp-container .btn { width: 100%; }
-.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog { max-width: 320px; }
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog { max-width: 420px; }
 .zoom-anim-dialog h1 { color: #FFF; font-size: 18px; line-height: 32px; }
-.zoom-anim-dialog p  { color: #FFF; font-size: 16px; line-height: 32px; margin: 0;  }
+.zoom-anim-dialog p  { color: #FFF; font-size: 16px; line-height: 32px; margin: 0; text-align: justify; }
+.disclaimer { color: #878787; background-color: #FFCDCE; padding: 8px; font-size: 9px; text-align: justify; border: 1px solid #F0C0C1; }
 /*.mfp-close-btn-in .mfp-close,.mfp-close-btn-in .mfp-close:hover { border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; background-color: #FFF; border: 2px solid #333; margin: 20px -22px 0px 0px; width: 44px; height: 44px; opacity: 1; font-weight: bold; font-size: 44px; color: #333;}
 .mfp-close-btn-in .mfp-close:hover { opacity: 0.5; }*/

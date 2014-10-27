@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
 	<link rel="stylesheet" href="css/magnific-popup.css">
-	<link rel="stylesheet" href="css/white.css">
 	<link rel="stylesheet" href="css/tiny-nav.css">
+	<link rel="stylesheet" href="css/white.css">
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico' />
 </head>
 <body>
@@ -19,7 +19,7 @@
 		<!--Requires tiny-nav.css & tiny-nav.js to work-->
 		<div class="tiny-nav">
 			<input type="button" id="tiny-nav-button" style="display: none" value="OFF">
-			<ul onclick="toggle(this);"><img src="img/menu-icon.png"/>
+			<ul onclick="toggle(this);"><img class="tiny-nav-hamburger" src="img/menu-icon.png"/>
 				<a href="index.html" class="glyphicon glyphicon-home home-icon"></a>
 				<a href="black.html" class="black-div">black</a>
 				<a href="white.html" class="white-div">white</a>
@@ -28,6 +28,7 @@
 				<a href="natural.html" class="natural-div">natural</a>
 				<a href="brown.html" class="brown-div">brown</a>
 				<a href="wood.html" class="wood-div">our way</a>
+				<a><img class="nav-logo" src="img/infinity-logo-black.png"/></a>
 			</ul>
 		</div>
 	</div>
@@ -68,11 +69,15 @@
 				<div id="timber" style="height: 720px; overflow: hidden;"></div>
 				<a id="special-popup" class="popup-with-zoom-anim" href="#small-dialog"></a>
 				<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-					<form enctype="multipart/form-data" action="php/mail.php" method="POST" >
-						<span>If you like this color of wood, please provide your name and email address before you submit your color. An email including your specifications will be sent to both <strong>you</strong> and our <strong>professional</strong> design team. Have a great day!</span>
+					<form name="myForm" onsubmit="return validateForm()" enctype="multipart/form-data" action="php/mail.php" method="POST" >
+						<span>If you are interested in seeing a floor in this color please provide your name and email address before you submit this color so our custom color technician can start working to create a sample for your project. Thanks.</span>
 						<input style="display: none;" id="index-value" type="text" class="form-control" name="index"/>
-						<input type="text" class="form-control" placeholder="Full Name"name="name"/>
-						<input type="email" class="form-control" placeholder="Email Address" name="email"/>
+						<input type="text" class="form-control" placeholder="Full Name (required)" name="name"/>
+						<input type="text" class="form-control" placeholder="Firm Name" name="firm"/>
+						<input type="text" class="form-control" placeholder="Project Name"name="project"/>
+						<input type="text" class="form-control" placeholder="Phone Number"name="phone"/>
+						<input type="email" class="form-control" placeholder="Email Address (required)" name="email"/>
+						<span class="disclaimer">Please note the color you chose may vary slightly on different devices but rest assured we will match your desired color.</span>
 						<button id="submitbutton" type="submit" value="Send File" class="btn btn-primary">Submit</button>
 					</form>
 				</div>
@@ -93,11 +98,18 @@
 		skrollr.menu.init(s, {
 			//skrollr will smoothly animate to the new position using `animateTo`.
 			animate: true,
-			easing: 'outCubic', scale: 2,
+			easing: 'swing', scale: 2,
 			duration: function(currentTop, targetTop) {return 7500;}
 		});
 		timber.setLogoOpacity(0.35);
 		timber.setBackground("white.jpg");
+		
+		function validateForm() {
+			var x = document.forms["myForm"]["name"].value;
+			var y = document.forms["myForm"]["email"].value;
+			if (x==null || x=="") {	alert("First name must be filled out");	return false;	}
+			else if (y==null || y=="") {	alert("Please provide an email address");	return false;	}
+		}
 	</script>
 </body>
 </html>
