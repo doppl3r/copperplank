@@ -33,7 +33,7 @@ $message =  '<div style="border: 1px dashed #4e381a; border-radius: 5px; padding
             '<p style="color: #4e381a;"><strong>Project Name:</strong> '.$_REQUEST['project'].'</p>'.
             '<p style="color: #4e381a;"><strong>Phone Number:</strong> '.$_REQUEST['phone'].'</p>'.
             '<p style="color: #4e381a;"><strong>Unique Wood Code:</strong> </p>'.
-            '<a style="display: inline-block; margin-top: 12px; color: #FFF; text-decoration: none; background-color: #4e381a; padding: 12px;" href="http://doppl3r.com/copperplank/'.$_REQUEST['index'].'#section3">'.$_REQUEST['index'].'</a>'.
+            '<a style="display: inline-block; margin-top: 12px; color: #FFF; text-decoration: none; background-color: #4e381a; padding: 12px;" href="http://copperplank.com/infinity/'.$_REQUEST['index'].'#section3">'.$_REQUEST['index'].'</a>'.
             '</div>';
 $mail->msgHTML($message);
 $mail->AltBody = 'Unique wood color code: '+$_REQUEST['index'];
